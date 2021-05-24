@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "declaration": true,
+      "esModuleInterop": true,
+      "module": "CommonJS",
+      "moduleResolution": "node",
+      "newLine": "lf",
+      "outDir": "./lib",
+      "sourceMap": true,
+      "strict": true,
+      "target": "ES6"
+    },
+    "exclude": ["node_modules", "lib"],
+    "include": ["src/**/*"]
+}

@@ -1,0 +1,10 @@
+{
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.rulers": [78],
+    "editor.tabSize": 2,
+    "files.encoding": "utf8",
+    "files.eol": "\n",
+    "standard.engine": "ts-standard"
+  }
+  
