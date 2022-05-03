@@ -79,6 +79,17 @@ describe('rx', () => {
     assert.strictEqual(regexp.flags, 'gi')
   })
 
+  it('should allow multiple flags in any order', () => {
+    const regexp = rx.ig`hello`
+    assert(regexp instanceof RegExp)
+    assert.strictEqual(regexp.source, 'hello')
+    assert.strictEqual(regexp.flags, 'gi')
+  })
+
+  it('should reject invalid regex flags', () => {
+    assert.throws(() => rx.x`hello`, SyntaxError)
+  })
+
   it('should work with the date example', () => {
     const dateTime = rx`
       (\d{4}-\d{2}-\d{2}) // date
