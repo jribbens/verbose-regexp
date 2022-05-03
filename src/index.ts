@@ -19,7 +19,7 @@ const _rx = (
   ): RegExp => new RegExp(parse(template, ...args))) as RX
 
 export const rx: RX = new Proxy(_rx, {
-  get(target, flags: string) {
+  get (target, flags: string) {
     return function (
       template: TemplateStringsArray, ...args: any[]
     ): RegExp {
