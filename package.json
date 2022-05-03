@@ -31,13 +31,13 @@
     "project": "./tsconfig.json"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "devDependencies": {
-    "@types/mocha": "^8.2.2",
-    "@types/node": "^15.6.0",
-    "typescript": "^4.2.4",
-    "ts-standard": "^10.0.0",
-    "mocha": "^8.4.0"
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^16.11.33",
+    "mocha": "^10.0.0",
+    "ts-standard": "^11.0.0",
+    "typescript": "^4.6.4"
   }
 }
