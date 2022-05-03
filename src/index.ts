@@ -14,18 +14,16 @@ function parse (template: TemplateStringsArray, ...subs: any[]): string {
   )
 }
 
-export const rx: RX = (
+const _rx = (
   (template: TemplateStringsArray, ...args: any[]
   ): RegExp => new RegExp(parse(template, ...args))) as RX
 
-const FLAGS = 'dgimsuy'
-
-for (let i = 1; i < (1 << FLAGS.length); i++) {
-  const flags = FLAGS.replace(
-    /./g, (char, offset) => (i & (1 << offset)) > 0 ? char : '')
-  rx[flags] = function (
-    template: TemplateStringsArray, ...args: any[]
-  ): RegExp {
-    return new RegExp(parse(template, ...args), flags)
+export const rx: RX = new Proxy(_rx, {
+  get(target, flags: string) {
+    return function (
+      template: TemplateStringsArray, ...args: any[]
+    ): RegExp {
+      return new RegExp(parse(template, ...args), flags)
+    }
   }
-}
+})
