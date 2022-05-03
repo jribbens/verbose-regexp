@@ -87,7 +87,7 @@ describe('rx', () => {
   })
 
   it('should reject invalid regex flags', () => {
-    assert.throws(() => rx.x`hello`, /Invalid flags supplied/)
+    assert.throws(() => rx.x`hello`, SyntaxError)
   })
 
   it('should work with the date example', () => {
