@@ -28,11 +28,6 @@ e.g.:
 
 ```javascript
     const alpha = rx.i`[a-z]+`
-```
-
-Note that if you use multiple flags, they must be in alphabetical order:
-
-```javascript
     const allAlpha = rx.gi`[a-z]+`
 ```
 
