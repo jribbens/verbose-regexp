@@ -41,3 +41,14 @@ or `//`), you can simply escape it with backslashes or a character class:
       (?:/(.*))         // path
     `
 ```
+
+## History
+
+### 2.0.0 (2022-05-03)
+
+  * Use 'Proxy' objects to avoid having to create static properties for
+    every permutation of the possible flags.
+
+### 1.0.0 (2021-24-05)
+
+  * Iniital release.
