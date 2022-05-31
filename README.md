@@ -49,6 +49,6 @@ or `//`), you can simply escape it with backslashes or a character class:
   * Use 'Proxy' objects to avoid having to create static properties for
     every permutation of the possible flags.
 
-### 1.0.0 (2021-24-05)
+### 1.0.0 (2021-05-24)
 
-  * Iniital release.
+  * Initial release.
