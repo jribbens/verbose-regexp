@@ -116,4 +116,24 @@ describe('rx', () => {
     assert.strictEqual(result[2], 'example.com')
     assert.strictEqual(result[3], '/foo')
   })
+
+  it('should allow embedded regexps', () => {
+    const date = rx`\d{4}-\d{2}-\d{2}`
+    const time = rx`\d{2}:\d{2}:\d{2}`
+    const dateTime = rx`(${date})T(${time})`
+    const result = dateTime.exec(
+      new Date('2020-05-24T12:34:56Z').toISOString()
+    )
+    assert(result !== null)
+    assert.strictEqual(result[1], '2020-05-24')
+    assert.strictEqual(result[2], '12:34:56')
+  })
+
+  it('embedded regexps should be atomic', () => {
+    const aorb = rx`a|b`
+    const aorbthenc = rx`${aorb}c`
+    assert(aorbthenc.test('ac'))
+    assert(aorbthenc.test('bc'))
+    assert(!aorbthenc.test('a'))
+  })
 })

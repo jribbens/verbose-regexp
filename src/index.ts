@@ -10,7 +10,8 @@ function trim (str: string): string {
 function parse (template: TemplateStringsArray, ...subs: any[]): string {
   return subs.reduce(
     (result: string, sub, i) =>
-      result + String(sub) + trim(template.raw[i + 1]), trim(template.raw[0])
+      result + (sub instanceof RegExp ? `(?:${sub.source})` : String(sub)) +
+        trim(template.raw[i + 1]), trim(template.raw[0])
   )
 }
 
